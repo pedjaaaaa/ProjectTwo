@@ -1,0 +1,52 @@
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:500&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Graduate&display=swap');
+
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+
+body {
+  background-image: url("../img/grass.png") !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+li, a {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0 20px 0 0 ;
+  /* background-color: #24252A; */
+  font-family: "Graduate", "Montserrat", "Roboto";
+  font-weight: 400;
+  font-size: 20px;
+  /* color: #edf0f1; */
+  color: #24252A;
+  text-decoration: none;
+}
+
+p {
+  font-family: "Montserrat", "Roboto";
+  /* font-weight: 50; */
+  font-size: 16px;
+}
+
+header {
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+.logo {
+  cursor: pointer;
+  margin-right: auto;
+  /* order: 3; */
+  /* margin-left: auto; */
+}
+
+.row {
+  justify-content: center;
+}
