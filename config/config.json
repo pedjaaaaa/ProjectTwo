@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "iloveanime7",
     "database": "team_up",
     "host": "127.0.0.1",
     "port": 3306,
