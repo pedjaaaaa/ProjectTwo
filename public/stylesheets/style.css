@@ -1,5 +1,5 @@
-/* @import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css?family=Roboto:500&display=swap'); */
+ /* @import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');  */
+ @import url('https://fonts.googleapis.com/css?family=Roboto:500&display=swap'); 
 @import url('https://fonts.googleapis.com/css?family=Graduate&display=swap');
 
 form.signup,
@@ -11,6 +11,10 @@ body {
   /* background-image: url("../img/grass.png") !important; */
   /* background-repeat: no-repeat;
   background-size: cover; */
+}
+
+.col-md-8 {
+  margin-top: 100px;
 }
 
 .main {
@@ -49,7 +53,7 @@ header {
   margin-top: 10px;
   font-family: "Graduate", "Montserrat", "Roboto";
   font-weight: 450;
-  font-size: 30px;
+  font-size: 20px;
   /* order: 3; */
   /* margin-left: auto; */
 }
