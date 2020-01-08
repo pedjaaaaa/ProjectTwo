@@ -1,28 +1,23 @@
 {
-  "name": "ProjectTwo",
+  "name": "team-up",
   "version": "1.0.0",
-  "description": "## Sports",
-  "main": "index.js",
-  "dependencies": {
-    "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
-    "mysql": "^2.17.1",
-    "mysql2": "^2.0.2",
-    "sequelize": "^5.21.3"
-  },
-  "devDependencies": {},
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pedjaaaaa/ProjectTwo.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Arnold Diep, Pedja Vasic, Sinae Kim, Shelby Denckla",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pedjaaaaa/ProjectTwo/issues"
-  },
-  "homepage": "https://github.com/pedjaaaaa/ProjectTwo#readme"
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.16.3",
+    "express-session": "^1.17.0",
+    "mysql2": "^1.6.4",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^4.41.2"
+  }
 }
