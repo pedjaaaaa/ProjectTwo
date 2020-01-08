@@ -1,25 +1,78 @@
-/* @import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto:500&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css?family=Roboto:500&display=swap'); */
 @import url('https://fonts.googleapis.com/css?family=Graduate&display=swap');
 
 form.signup,
 form.login {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 body {
+  /* background-image: url("../img/grass.png") !important; */
+  /* background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+.main {
   background-image: url("../img/grass.png") !important;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.loginPage {
+  background-image: url("../img/grass.png") !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.signUpPage {
+  background-image: url("../img/grass.png") !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+.inner {
+  padding: 5px 25px 5px 60px;
+}
+
+.logo {
+  cursor: pointer;
+  margin-right: auto;
+  margin-top: 10px;
+  font-family: "Graduate", "Montserrat", "Roboto";
+  font-weight: 450;
+  font-size: 30px;
+  /* order: 3; */
+  /* margin-left: auto; */
+}
+.logo a {
+  font-size: 35px;
+  font-weight: 450;
+}
+
+.navbar {
+  padding: 8px;
+}
+
+ul.nav_links {
+  margin: 10px 0px 0px 0px;
+}
+
 li, a {
   display: inline-block;
   list-style-type: none;
-  padding: 0 20px 0 0 ;
+  padding: 0 20px 0 0;
   /* background-color: #24252A; */
   font-family: "Graduate", "Montserrat", "Roboto";
-  font-weight: 400;
+  font-weight: 300;
   font-size: 20px;
   /* color: #edf0f1; */
   color: #24252A;
@@ -32,21 +85,57 @@ p {
   font-size: 16px;
 }
 
-header {
-  display: flex;
-  /* justify-content: space-between; */
-  justify-content: flex-end;
-  align-items: center;
-  padding: 30px 10%;
-}
-
-.logo {
-  cursor: pointer;
-  margin-right: auto;
-  /* order: 3; */
-  /* margin-left: auto; */
-}
-
 .row {
   justify-content: center;
 }
+
+.loginCol {
+  background-color: rgba(33, 160, 28, 0.404);
+  padding: 40px 35px 40px 35px;
+  margin: 80px;
+  border-radius: 5px;
+}
+
+.signUpCol {
+  background-color: rgba(28, 155, 160, 0.404);
+  padding: 40px 35px 40px 35px;
+  margin: 80px;
+  border-radius: 5px;
+}
+
+#main {
+  text-align: center;
+  margin-top: 250px;
+  font-size: 70px;
+}
+
+#login {
+  text-align: center;
+}
+
+#signUp {
+  text-align: center;
+}
+
+.btn {
+  margin-top: 15px;
+  float:right;
+}
+
+.btn-group {  
+  padding : 20px;
+}
+
+.carousel-inner {
+  width:100%;
+}
+
+/* .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(61, 83, 61);
+  color: white;
+  text-align: center;
+} */
