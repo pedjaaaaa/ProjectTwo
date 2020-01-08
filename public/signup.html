@@ -7,22 +7,21 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Sports</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="./stylesheets/style.css" rel="stylesheet">
 </head>
 
-<body class="signUpPage">
+<body class="loginPage">
 
   <header class="inner">
-    <div class="logo"><a href="index.html">
+    <div class="logo"><a href="/">
         <i class="fas fa-running"></i> Team Up</a>
     </div>
 
     <nav class="navbar">
-      <ul class="nav_links">        
-        <li><a class="nav-link" href="#">Home</a></li>
+      <ul class="nav_links">
         <li><a class="nav-link" href="#">Sports</a></li>
         <li><a class="nav-link" href="#">Log In</a></li>
         <li><a class="nav-link" href="#">Sign Up</a></li>
@@ -33,10 +32,15 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-md-6 col-md-offset-3 signUpCol">
-        <h2 id="signUp">Sign up</h2>
+      <div class="col-md-6 col-md-offset-3 loginCol">
+        <h2 id="login">Sign Up</h2>
 
-        <form class="login">
+        <form class="signUpForm">
+
+          <div class="form-group">
+            <label for="userName">User Name</label>
+            <input type="name" class="form-control" id="user-input" placeholder="Username">
+          </div>
 
           <div class="form-group">
             <label for="Email1">Email address</label>
@@ -45,27 +49,33 @@
 
           <div class="form-group">
             <label for="Password1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
+            <input type="password" class="form-control" id="password-input-1" placeholder="Password">
           </div>
-          <button type="submit" class="btn btn-primary">Sign up</button>
+
+          <div class="form-group">
+            <label for="Password1">Confirm Password</label>
+            <input type="password" class="form-control" id="password-input-2" placeholder="Confirm Password">
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="signUpButton">Sign Up</button>
 
         </form>
-        
+
       </div>
 
     </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="./js/signup.js"></script>
 </body>
 
 </html>

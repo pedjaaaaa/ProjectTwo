@@ -7,7 +7,13 @@ module.exports = function(app) {
         if (req.user) {
             res.redirect("/members");
         }
+        res.sendFile(path.join(__dirname, "../public/main.html"))
+    });
 
+    app.get("/signup", function(req, res) {
+        if (req.user) {
+            res.redirect("/members")
+        }
         res.sendFile(path.join(__dirname, "../public/signup.html"))
     });
 
