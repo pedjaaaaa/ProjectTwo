@@ -61,10 +61,15 @@
 </head>
 
 <body>
-    <ul id="messages"></ul>
-    <form action="">
-        <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
+    <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6">
+                <ul id="messages"></ul>
+                <form action="">
+                    <input id="m" autocomplete="off" /><button>Send</button>
+                </form>
+            </div>
+        </div>
 </body>
 
 <script src="/socket.io/socket.io.js"></script>
@@ -85,4 +90,5 @@
         });
     });
 </script>
+
 </html>
