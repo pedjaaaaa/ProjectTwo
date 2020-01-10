@@ -57,6 +57,9 @@
         #messages li:nth-child(odd) {
             background: #eee;
         }
+        .userName {
+            background: yellow;
+        }
     </style>
 </head>
 
@@ -76,6 +79,15 @@
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 
 <script>
+    let username;
+
+    $.get("/api/user_data").then(function(data) {
+    $(".member-name").text(data.email);
+    username = data.username;
+    console.log(data);
+    console.log(username);
+  });
+
     $(function () {
         var socket = io();
         $('form').submit(function (e) {
@@ -86,6 +98,7 @@
         });
 
         socket.on('chat message', function (msg) {
+            $('#messages').append($(`<div class="userName">`).append(`${username}>>>`));
             $('#messages').append($('<p>').text(msg));
         });
     });
