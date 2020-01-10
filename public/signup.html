@@ -13,7 +13,7 @@
   <link href="./stylesheets/style.css" rel="stylesheet">
 </head>
 
-<body class="signUpPage">
+<body class="loginPage">
 
   <header class="inner">
     <div class="logo"><a href="index.html">
@@ -33,10 +33,15 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-md-6 col-md-offset-3 signUpCol">
-        <h2 id="signUp">Sign up</h2>
+      <div class="col-md-6 col-md-offset-3 loginCol">
+        <h2 id="login">Login</h2>
 
         <form class="login">
+
+          <div class="form-group">
+            <label for="userName">User Name</label>
+            <input type="name" class="form-control" id="user-input" placeholder="Username">
+          </div>
 
           <div class="form-group">
             <label for="Email1">Email address</label>
@@ -47,7 +52,7 @@
             <label for="Password1">Password</label>
             <input type="password" class="form-control" id="password-input" placeholder="Password">
           </div>
-          <button type="submit" class="btn btn-primary">Sign up</button>
+          <button type="submit" class="btn btn-primary">Login</button>
 
         </form>
 
@@ -65,7 +70,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
-
 </body>
 
 </html>
