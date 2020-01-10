@@ -30,7 +30,7 @@ passport.use(new LocalStrategy(
     }
 ));
 
-passport.serializeUser(function(User, cb) {
+passport.serializeUser(function(user, cb) {
     cb(null, user);
 });
 
