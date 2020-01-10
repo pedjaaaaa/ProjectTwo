@@ -1,3 +1,4 @@
+
 DROP DATABASE IF EXISTS team_up;
 CREATE DATABASE team_up;
 
@@ -12,4 +13,5 @@ CREATE TABLE Users (
 
 INSERT INTO Users (username, email, password)
 VALUES ("sinae", "user1@gmail.com", "0090");
+
 
