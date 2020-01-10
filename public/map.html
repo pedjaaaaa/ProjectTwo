@@ -10,7 +10,7 @@
       #map {
         height: 100%;
       }
-      /* Optional: Makes the sample page fill the window. */
+      /* Optional: Makes the page fill the window. */
       html, body {
         height: 100%;
         margin: 0;
@@ -27,7 +27,7 @@
       var infowindow;
 
       function initMap() {
-          //PEDJA IS THIS IS WHERE THE LONGITUDE AND LATITUDE VARIABLES CAN CHANGE
+          //PEDJA IS THIS IS WHERE THE LONGITUDE AND LATITUDE VARIABLES CAN CHANGE, CURRENTLY HARD CODED FOR SEATTLE
         var seattle = new google.maps.LatLng(47.608013, -122.335167);
 
         infowindow = new google.maps.InfoWindow();
@@ -37,7 +37,7 @@
 
         var request = {
           locationBias: seattle,
-          query: 'Montlake Playfield Park',
+          query: 'park',
           fields: ['name', 'geometry'],
         };
 
