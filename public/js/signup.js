@@ -1,13 +1,14 @@
 $(document).ready(function () {
   // Getting references to our form and input
-  var signUpForm = $("form.signup");
+  var signUpForm = $(".signUpForm");
   var usernameInput = $("#username-input");
   var emailInput = $("#email-input");
-  var passwordInput = $("#password-input");
+  var passwordInput = $("#password-input-1");
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function (event) {
     event.preventDefault();
+    console.log(usernameInput.val());
     var userData = {
       username: usernameInput.val().trim(),
       email: emailInput.val().trim(),
@@ -17,6 +18,14 @@ $(document).ready(function () {
     if (!userData.email || !userData.password || !userData.username) {
       return;
     }
+
+    var password = $("#password-input-1").val();
+    var confirmPassword = $("#password-input-2").val();
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.")
+      return false;
+    }
+
     // If we have an email and password, run the signUpUser function
     signUpUser(userData.username, userData.email, userData.password);
     emailInput.val("");
@@ -38,17 +47,6 @@ $(document).ready(function () {
       })
       .catch(handleLoginErr);
   }
-
-  $("#signUpButton").on("click", function (event) {
-    event.preventDefault();
-    var password = $("#password-input-1").val();
-    var confirmPassword = $("#password-input-2").val();
-    if (password !== confirmPassword) {
-      alert("Passwords do not match.")
-      return false;
-    }
-    return true;
-  });
 
   function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);
