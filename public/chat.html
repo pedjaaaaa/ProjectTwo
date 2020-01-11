@@ -30,6 +30,14 @@
             font: 13px Helvetica, Arial;
         }
 
+        #jumbotron1 {
+            margin: 0px;
+            padding: 10px;
+            font-size: 50px;
+            text-align: center;
+            background-color: lightblue;
+        }
+
         form {
             background: #000;
             padding: 3px;
@@ -80,21 +88,21 @@
 </head>
 
 <body>
-    <div class="jumbotron">Kickball</div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-6 map" id="map"></div>
-            <div class="col-6">
-                <ul id="messages"></ul>
-                <form action="">
-                    <input id="m" autocomplete="off" /><button>Send</button>
-                </form>
-            </div>
+    <div class="row">
+        <div class="col-6">
+            <div style="height: 100vh" id="map"></div>
+        </div>
+        <div class="col-6">
+            <div class=“jumbotron” id="jumbotron1"></div>
+            <ul id="messages"></ul>
+            <form action="">
+                <input id="m" autocomplete="off" /><button>Send</button>
+            </form>
         </div>
     </div>
 </body>
-
+<script src="/js/chat.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 <script async defer
@@ -155,7 +163,7 @@
         });
     }
 
-// CHAT APPLICATION
+    // CHAT APPLICATION
     let username;
 
     $.get("/api/user_data").then(function (data) {
@@ -165,20 +173,41 @@
         console.log(username);
     });
 
+    // $.get("/chat/:sport").then(function (req) {
+    //     console.log(req.params)
+    //     //$("#jumbotron1").text(sport);
+    // });
+
     $(function () {
         var socket = io();
+        // Sending chat message
         $('form').submit(function (e) {
             e.preventDefault(); // prevents page reloading
-            socket.emit('chat message', $('#m').val());
+            let chatMsg = {
+                "sender": username,
+                "msg": $('#m').val()
+            }
+            socket.emit('chat message', JSON.stringify(chatMsg));
             $('#m').val('');
             return false;
         });
 
+        // Receiving chat message to show
         socket.on('chat message', function (msg) {
-            $('#messages').append($(`<div class="userName">`).append(`${username}:`));
-            $('#messages').append($('<p class="msg">').text(msg));
+            // let chatMsg = {
+            //     "sender": "Fred",
+            //     "msg": msg
+            // }
+            let chatMsg = JSON.parse(msg);
+            $('#messages').append($(`<div class="userName">`).append(`${chatMsg.sender}:`));
+            $('#messages').append($('<p class="msg">').text(chatMsg.msg));
         });
+
+
     });
 </script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbGlgrbYUOVKntBDbCnVlEZrVYAA7VYpY&libraries=places&callback=initMap"
+    async defer></script>
 
 </html>

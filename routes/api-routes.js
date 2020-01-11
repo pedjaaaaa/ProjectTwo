@@ -26,6 +26,7 @@ module.exports = function (app) {
     });
 
     app.get("/api/user_data", function (req, res) {
+        //
         console.log(req.session.passport.user)
         if (!req.user) {
              res.json({});

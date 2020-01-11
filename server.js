@@ -23,15 +23,18 @@ require("./routes/api-routes.js")(app);
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 app.io = io;
-// var rooms = [`Soccer`, `Flag-Football`, `Kickball`];
+
+
+
+//sessionStore = require('awesomeSessionStore'), // find a working session store (have a look at the readme)
+//passportSocketIo = require("passport.socketio");
 
 io.on('connection', function (socket) {
     socket.on('chat message', function (msg) {
+        console.log(`Chat message received: ${msg}`);
         io.emit('chat message', msg);
     });
 });
-
-io.sockets.emit('function', 'data1', 'data2');
 
 db.sequelize.sync({ force: true }).then(function () {
     server.listen(PORT, function () {
