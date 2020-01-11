@@ -3,16 +3,16 @@ module.exports = function(sequelize, Datatypes) {
         sport: {
             type: Datatypes.STRING,
             allowNull: true,
+        },
+        chatID: {
+            type: Datatypes.INTEGER,
+            allowNull: false
+        },
+        park: {
+            type: Datatypes.STRING,
+            allowNull: true
         }
     });
-
-    Sport.associate = function(models) {
-        Sport.belongsTo(models.User, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    };
 
     return Sport;
 }
