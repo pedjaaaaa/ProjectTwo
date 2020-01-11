@@ -83,16 +83,16 @@
     <div class="jumbotron">Kickball</div>
 
     <div class="container">
-    <div class="row">
-        <div class="col-6 map" id="map"></div>
-        <div class="col-6">
-            <ul id="messages"></ul>
-            <form action="">
-                <input id="m" autocomplete="off" /><button>Send</button>
-            </form>
+        <div class="row">
+            <div class="col-6 map" id="map"></div>
+            <div class="col-6">
+                <ul id="messages"></ul>
+                <form action="">
+                    <input id="m" autocomplete="off" /><button>Send</button>
+                </form>
+            </div>
         </div>
     </div>
-    <!-- </div> -->
 </body>
 
 <script src="/socket.io/socket.io.js"></script>
@@ -101,8 +101,12 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-VF7nGUXZizMU85BJnAQ06Qg_acuZYJw&callback=init"></script>
 
 <script>
-    let latArray;
-    let lonArray;
+    // GOOGLE MAPS
+    let latArray = [];
+    let lonArray = [];
+    let finalLat;
+    let finalLong;
+    let service;
 
     var getPosition = function (options) {
         return new Promise(function (resolve, reject) {
@@ -115,13 +119,12 @@
             console.log(position);
             let lat = position.coords.latitude;
             let long = position.coords.longitude;
-        
+
             latArray.push(lat);
             lonArray.push(long);
-            console.log(latArray);
-            console.log(longArray);
             geolat();
             geolong();
+            init(finalLat, finalLong);
         })
         .catch((err) => {
             console.error(err.message);
@@ -131,8 +134,7 @@
         for (i = 0; i < latArray.length; i++) {
             sum = 0;
             sum += latArray[i++];
-            j = i + 1;
-            finalLat = sum / j;
+            finalLat = sum / i;
             console.log(finalLat);
         }
     };
@@ -141,19 +143,19 @@
         for (i = 0; i < lonArray.length; i++) {
             sum = 0;
             sum += lonArray[i++];
-            j = i + 1;
-            finalLong = sum / j;
+            finalLong = sum / i;
             console.log(finalLong);
         }
     };
 
-    function init() {
+    function init(finalLat, finalLong) {
         new google.maps.Map(document.getElementById('map'), {
-            center: { lat: 59.325, lng: 18.069 },
+            center: { lat: 47.608013, lng: -122.335167 },
             zoom: 15
         });
     }
 
+// CHAT APPLICATION
     let username;
 
     $.get("/api/user_data").then(function (data) {
