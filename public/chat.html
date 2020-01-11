@@ -115,16 +115,27 @@
 
     $(function () {
         var socket = io();
+        // Sending chat message
         $('form').submit(function (e) {
             e.preventDefault(); // prevents page reloading
-            socket.emit('chat message', $('#m').val());
+            let chatMsg = {
+                "sender": username,
+                "msg": $('#m').val()
+            }
+            console.log(`Sent Message: ${JSON.stringify(chatMsg)}`);
+            socket.emit('chat message', JSON.stringify(chatMsg));
             $('#m').val('');
             return false;
         });
-
+        // Receiving chat message to show
         socket.on('chat message', function (msg) {
-            $('#messages').append($(`<div class="userName">`).append(`${username}:`));
-            $('#messages').append($('<p class="msg">').text(msg));
+            // let chatMsg = {
+            //     "sender": "Fred",
+            //     "msg": msg
+            // }
+            let chatMsg = JSON.parse(msg);
+            $('#messages').append($(`<div class="userName">`).append(`${chatMsg.sender}:`));
+            $('#messages').append($('<p class="msg">').text(chatMsg.msg));
         });
     });
 </script>
