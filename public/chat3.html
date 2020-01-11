@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="./stylesheets/style.css" rel="stylesheet">
-    <title>Kickball Chatroom</title>
+    <title>Flag-Football Chatroom</title>
     <style>
         * {
             margin: 0;
@@ -80,79 +80,51 @@
 </head>
 
 <body>
-    <div class="jumbotron">Kickball</div>
+    <div class="jumbotron">Flag-Football</div>
 
-    <div class="container">
-    <div class="row">
-        <div class="col-6 map" id="map"></div>
-        <div class="col-6">
-            <ul id="messages"></ul>
-            <form action="">
-                <input id="m" autocomplete="off" /><button>Send</button>
-            </form>
+    <!-- <div class="container"> -->
+        <div class="row">
+            <div class="col-6 mapLocation"></div>
+            <div class="col-6">
+                <ul id="messages"></ul>
+                <form action="">
+                    <input id="m" autocomplete="off" /><button>Send</button>
+                </form>
+            </div>
         </div>
-    </div>
     <!-- </div> -->
 </body>
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-VF7nGUXZizMU85BJnAQ06Qg_acuZYJw&callback=init"></script>
 
 <script>
-    let latArray;
-    let lonArray;
+    // let latArray;
+    // let lonArray;
 
-    var getPosition = function (options) {
-        return new Promise(function (resolve, reject) {
-            navigator.geolocation.getCurrentPosition(resolve, reject, options);
-        });
-    }
+    // navigator.geolocation.getCurrentPosition(function (position) {
+    //     console.log(position.coords.latitude, position.coords.longitude);
+    //     var lat = position.coords.latitude;
+    //     var long = position.coords.longitude;
+    //     latArray.push(lat);
+    //     lonArray.push(long);
+    // });
 
-    getPosition()
-        .then((position) => {
-            console.log(position);
-            let lat = position.coords.latitude;
-            let long = position.coords.longitude;
-        
-            latArray.push(lat);
-            lonArray.push(long);
-            console.log(latArray);
-            console.log(longArray);
-            geolat();
-            geolong();
-        })
-        .catch((err) => {
-            console.error(err.message);
-        });
+    // function geolat() {
+    //     for (i = 0; sum = 0;  i <latArray.length; i++) {
+    //         sum += latArray[i++];
+    //         j = i + 1;
+    //         finalLat = sum / j;
+    //     }
+    // };
 
-    function geolat() {
-        for (i = 0; i < latArray.length; i++) {
-            sum = 0;
-            sum += latArray[i++];
-            j = i + 1;
-            finalLat = sum / j;
-            console.log(finalLat);
-        }
-    };
-
-    function geolong() {
-        for (i = 0; i < lonArray.length; i++) {
-            sum = 0;
-            sum += lonArray[i++];
-            j = i + 1;
-            finalLong = sum / j;
-            console.log(finalLong);
-        }
-    };
-
-    function init() {
-        new google.maps.Map(document.getElementById('map'), {
-            center: { lat: 59.325, lng: 18.069 },
-            zoom: 15
-        });
-    }
+    // function geolong() {
+    //     for (i = 0; sum = 0;  i <lonArray.length; i++) {
+    //         sum += lonArray[i++];
+    //         j = i + 1;
+    //         finalLong = sum / j;
+    //     }
+    // };
 
     let username;
 

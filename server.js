@@ -23,27 +23,15 @@ require("./routes/api-routes.js")(app);
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 app.io = io;
+// var rooms = [`Soccer`, `Flag-Football`, `Kickball`];
 
 io.on('connection', function (socket) {
     socket.on('chat message', function (msg) {
         io.emit('chat message', msg);
     });
-
-    socket.broadcast.emit('Hi all');
-    // socket.on('register', handelRegister)
-    // socket.on('join', handleJoin)
-    // socket.on('leave', handleLeave)
-    // socket.on('message', handleMessage)
-    // socket.on('chatrooms', handleGetChatrooms)
-    // socket.on('disconnect', function () {
-    //     console.log('user disconnected', client.id);
-    //     handleDisconnect()
-    // })
-    // socket.on('error', function (err) {
-    //     console.log('received error from client:', client.id)
-    //     console.log(err)
-    // })
 });
+
+io.sockets.emit('function', 'data1', 'data2');
 
 db.sequelize.sync({ force: true }).then(function () {
     server.listen(PORT, function () {
