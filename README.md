@@ -4,9 +4,9 @@
 
 User Stories
 
-I want be able to play pickup sports with other link-minded individuals.
+I want be able to play pickup sports with members of my community.
 
-I want an easier way to plan playing pickup sports with friends or other players.
+I want an easier way to plan playing pickup sports with friends.
 
 I want to play team sports without joing a league.
 
@@ -20,16 +20,14 @@ Field Sport Meetup
 
 Sign up with username, password, email
 
-Select a sport you would like to play this week, (flag-football, kickball, soccer, ultimate frisbee)
-
-Choose the day of the week,
-
-Placed into chatroom with same sport and day
+Select a sport you would like to play (flag-football, kickball, soccer)
 
 
-API
+Placed into chatroom with same sport
 
-Google Places API
+Get a park recommendation based on user lat and long
 
-Socket.IO
+
+Html, CSS, Bootstrap, JavaScript, JQuery, MySQL, google maps API  and the following packages: 
+Bcryptjs,   Express,  Express-Session,  Mysql2, Passport,  Passport-Local,  Sequelize,  Socket.io
 
