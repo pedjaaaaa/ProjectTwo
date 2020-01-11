@@ -38,5 +38,5 @@ module.exports = function (app) {
         }
     });
     //Get user location
-    app.get()
+    //app.get()
 };

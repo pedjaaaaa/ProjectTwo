@@ -86,7 +86,7 @@
             <div style="height: 100vh" id="map"></div>
         </div>
         <div class="col-6">
-            <div class=“jumbotron” id="jumbotron1"></div>
+            <!-- <div class=“jumbotron” id="jumbotron1"></div> -->
             <ul id="messages"></ul>
             <form action="">
                 <input id="m" autocomplete="off" /><button>Send</button>
@@ -126,8 +126,6 @@
             $('#messages').append($(`<div class="userName">`).append(`${username}:`));
             $('#messages').append($('<p class="msg">').text(msg));
         });
-
-
     });
 </script>
 <script
