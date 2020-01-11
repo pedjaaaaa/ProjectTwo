@@ -36,7 +36,7 @@ io.on('connection', function (socket) {
     });
 });
 
-db.sequelize.sync({ force: true }).then(function () {
+db.sequelize.sync().then(function () {
     server.listen(PORT, function () {
         console.log("Visit http://localhost:" + PORT + "/ in your broswer");
     });
