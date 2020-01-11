@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "iloveanime7",
-    "database": "team_up",
-    "host": "127.0.0.1",
+    "username": "plltbhvwtkg4pcoh	",
+    "password": "pv37q252z2kiat9j",
+    "database": "rs4ctwpx0vgx2i8y",
+    "host": "y2w3wxldca8enczv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "port": 3306,
     "dialect": "mysql",
     "operatorsAliases": false
