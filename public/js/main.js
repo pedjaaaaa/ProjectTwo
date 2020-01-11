@@ -8,8 +8,10 @@ $(document).ready(function () {
   var sportButton = $("#sportButton");
   sportButton.on("click", function (event) {
     event.preventDefault();
-    var sport = $("#sport").val()
-    console.log(sport)
+    var sport = $("#sport").val();
+    
+    const newUrl = window.location.origin + '/chat/' + sport;
+    window.location.href = newUrl;
   });
 
 });
