@@ -13,7 +13,7 @@
     <link href="/stylesheets/style.css" rel="stylesheet">
 </head>
 
-<body class="selectionPage">
+<body class="main">
 
     <header class="inner">
         <div class="logo"><a href="index.html">
@@ -22,14 +22,28 @@
 
         <nav class="navbar">
             <ul class="nav_links">
-                <li><a class="nav-link" href="/main">Sports</a></li>
-                <li><a class="nav-link" href="/login">Log In</a></li>
-                <li><a class="nav-link" href="/signup">Sign Up</a></li>
+                <!-- <li><a class="nav-link" href="/main">Sports</a></li> -->
+                <!-- <li><a class="nav-link" href="/login">Log In</a></li>
+                <li><a class="nav-link" href="/signup">Sign Up</a></li> -->
+                <li><a class="nav-link" href="/logout">Log Out</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container-fluid">
+        <!-- <div class="row">            
+            <div class="col-sm-6 col-sm-offset-0 welcomeBox">
+                <h2>Welcome!! <span class="member-name"></span></h2>
+            </div>
+        </div> -->
+        <section id="container">
+            <section>
+                <div class="layer">
+                    <h2 class="box">Welcome!! <span class="member-name"></span></h2>
+                </div>
+            </section>
+        </section>
+
         <div class="row">
             <div class="col-sm-12">
 
@@ -44,16 +58,17 @@
                     <!-- Slideshow -->
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
-                            <img src="./img/carousel/out-01.png" width="1100" height="450" alt="sports" />
+                            <img src="./img/carousel/out-001.png" class="img-fluid" alt="sports" />
                         </div>
-                        <div class="d-flex align-items-center justify-content-center min-vh-100 carousel-caption">
-                            <h1><b>The real outdoor sports is calling</b></h1>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="./img/carousel/out-02.png" width="1100" height="450" alt="sports" />
+                        <div class="d-flex h-100 align-items-center justify-content-center  carousel-caption">
+                            
+                            <h1><b>The real outdoor sport is calling</b></h1>
                         </div>
                         <div class="carousel-item">
-                            <img src="./img/carousel/out-03.png" width="1100" height="450" alt="sports" />
+                            <img src="./img/carousel/out-002.png" class="img-fluid" alt="sports" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/carousel/out-003.png" class="img-fluid" alt="sports" />
                         </div>
                     </div>
 
@@ -92,7 +107,7 @@
                         <label for="day">Pick a Day of the Week</label>
                         <select class="form-control" id="day">
                             <option></option>
-                            <option>Sunday</option>
+                            <option>Sunday</option> 
                             <option>Monday</option>
                             <option>Tuesday</option>
                             <option>Wednesday</option>
@@ -101,14 +116,16 @@
                             <option>Saturday</option>
                         </select>
                     </div> -->
+
                     <button type="button" class="btn btn-success" href="/chat/:sport" type="submit" value="Submit" id="sportButton">Submit</button>
+
                 </form>
 
             </div>
         </div>
     </div>
 
-    <footer id="sticky-footer" class="py-3 bg-dark text-white-50" style="margin-top:40px">
+    <footer class="sticky-footer" class="py-3 bg-dark text-white-50" style="margin-top:0px;">
         <div class="container text-center">
             <small>Copyright &copy; Your Website</small>
         </div>
@@ -124,7 +141,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-    <script src="js/main.js" type="text/javascript"></script>
+    <script src="./js/main.js" type="text/javascript"></script>
 
 </body>
 
